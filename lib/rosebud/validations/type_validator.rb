@@ -3,7 +3,7 @@ module Rosebud
     class TypeValidator < Validator
       def validate_param(name, value, type)
         coerced_value = coerce_value(type, value)
-        error!(:type, param: name, status: 1) unless valid_type?(type, coerced_value)
+        error!(:type, param: name) unless valid_type?(type, coerced_value)
       end
 
       private
