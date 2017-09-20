@@ -1,19 +1,19 @@
 en:
   errawr:
     presence:
-      message: "missing parameter: %{param}"
+      message: "missing parameters: %{param}"
       name: "missing_parameter"
       http_status: 400
       metadata:
         status: 1
     type:
-      message: "invalid parameter: %{param}"
+      message: "invalid parameters: %{param}"
       name: "invalid_parameter"
       http_status: 400
       metadata:
         status: 1
     regex:
-      message: "invalid parameter: %{param}"
+      message: "invalid parameters: %{param}"
       name: "invalid_parameter"
       http_status: 400
       metadata:
