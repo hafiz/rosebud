@@ -3,15 +3,15 @@ module Rosebud
     class TypeValidator < Validator
       def validate_param(name, value, type)
         coerced_value = coerce_value(type, value)
-        error!(:type, param: name) unless valid_type?(type, coerced_value)
+        error!(:type, param: name, status: 1) unless valid_type?(type, coerced_value)
       end
-      
+
       private
       def coerce_value(type, value)
         coercer = Virtus::Attribute.build(type)
         coercer.coerce(value)
       end
-      
+
       def valid_type?(type, value)
         return true if value.nil?
         if type == Virtus::Attribute::Boolean
@@ -23,7 +23,7 @@ module Rosebud
         end
       end
     end
-    
+
     Validations.register_validator!(:type, TypeValidator)
   end
 end
